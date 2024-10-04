@@ -2,12 +2,22 @@ package com.example;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("Hello World");
-        MioThread t1 = new MioThread(10);
-        MioThread t2 = new MioThread(10);
-        new Thread(t1).start();
-        new Thread(t2).start();
+        //inizializzazione
+        Cestino c1 = new Cestino(0);
+        Persona p1 = new Persona(c1,10);
+        Persona p2 = new Persona(c1,10);
 
+        //lancio i thread
+        p1.start();
+        p2.start();
+
+        //Join dei due thread
+        p1.join();
+        p2.join();
+
+        //visualizzaione a schermo delle monete "Lanciate"
+        System.out.println(c1.getContatore());
     }
 }
