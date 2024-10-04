@@ -6,8 +6,8 @@ public class Main {
         System.out.println("Hello World");
         //inizializzazione
         Cestino c1 = new Cestino(0);
-        Persona p1 = new Persona(c1,10);
-        Persona p2 = new Persona(c1,10);
+        Persona p1 = new Persona(c1,1000);
+        Persona p2 = new Persona(c1,1000);
 
         //lancio i thread
         p1.start();
